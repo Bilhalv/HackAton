@@ -1,9 +1,9 @@
-import { Camera } from 'lucide-react';
+import { Camera } from "lucide-react";
 
 function App() {
   return (
     <>
-    <Camera size={64} />
+      
     </>
   );
 }
