@@ -6,7 +6,7 @@ interface Props {
   setPagina: (pagina: string) => void;
 }
 export default function Fotter(setPagina: Props) {
-  const [paginaAtual, setPaginaAtual] = useState("Home");
+  const [paginaAtual, setPaginaAtual] = useState("Ranking");
   const icons = [
     {
       icon: <Home />,

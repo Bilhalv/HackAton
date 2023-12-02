@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -31,6 +32,17 @@ function App() {
       );
     }
   };
+  const [nome, setNome] = useState("");
+  const [senha, setSenha] = useState("");
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    if (nome === "Dwight" && senha === "123") {
+      alert("Logado com sucesso");
+      navigate("/profile");
+    } else {
+      alert("Usuário ou senha incorretos");
+    }
+  };
   return (
     <>
       <body className="h-screen bg-fixed bg-no-repeat bg-cover font-Montserrat bg-main">
@@ -43,14 +55,14 @@ function App() {
           <div className="mb-6 w-full">
             <label htmlFor="cadastro">Cadastro</label>
             <div className="bg-black rounded-xl bg-opacity-10">
-              <Input border={"none"} placeholder="| Insira seu cadastro" />
+              <Input onChange={(e) => (e.target ? setNome(e.target.value) : "")} border={"none"} placeholder="| Insira seu cadastro" />
             </div>
           </div>
           <div className="mb-9 w-full">
             <label htmlFor="senha">Senha</label>
             <InputGroup size="md" className="flex flex-col">
               <div className="bg-black rounded-xl bg-opacity-10">
-                <Input
+                <Input onChange={(e) => (e.target ? setSenha(e.target.value) : "")}
                   pr="4.5rem"
                   type={show ? "text" : "password"}
                   placeholder="| Insira sua senha"
@@ -78,7 +90,10 @@ function App() {
           </div>
           <Button
             colorScheme="yellow"
-            _hover={{ 
+            onClick={
+              () => handleLogin()
+            }
+            _hover={{
               transform: "scale(1.1)",
               shadow: "10px 10px 25px 0px rgba(255, 221, 42, 0.40)",
             }}
