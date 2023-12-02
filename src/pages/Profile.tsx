@@ -7,7 +7,7 @@ import Ranking from "./profile/Ranking";
 import { useState } from "react";
 
 export default function Profile() {
-  const [pagina, setPagina] = useState("Ranking");
+  const [pagina, setPagina] = useState("Home");
   return (
     <>
       <body className="h-screen font-Montserrat bg-yellow-300">
