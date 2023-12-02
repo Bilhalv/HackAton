@@ -2,7 +2,9 @@
 module.exports = {
   content: ["./src/main.tsx", "./src/**/*.tsx", "./src/**/*.html"],
   theme: {
-    extend: {},
+    fontFamily: {
+      tormenta: ["Montserrat","sans-serif" ],
+    }
   },
   plugins: [],
 }
