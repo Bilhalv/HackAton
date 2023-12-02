@@ -30,7 +30,12 @@ export default function Fotter(setPagina: Props) {
       <nav className="flex justify-evenly items-center h-16 absolute w-full px-4 bottom-0 bg-[#1B0C27] rounded-t-3xl">
         {icons.map((i) => (
           <IconButton
-            onClick={() => setPagina.setPagina(i.fonte)}
+            onClick={() => {
+              setPagina.setPagina(i.fonte);
+              setPaginaAtual(i.fonte);
+            }}
+            isActive={paginaAtual === i.fonte}
+            _active={{ color: "yellow", bg: "none", transform: "scale(1.1)" }}
             icon={i.icon}
             aria-label={i.fonte}
             bg={"none"}
