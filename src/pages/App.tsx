@@ -33,7 +33,7 @@ function App() {
   };
   return (
     <>
-      <body className="bg-blue-950 bg-fixed h-screen font-Montserrat">
+      <body className="h-screen bg-fixed bg-no-repeat bg-cover font-Montserrat bg-main">
         <img src="./logo.png" className="mx-auto mb-9 pt-16" />
         <article className=" mx-11 text-white flex flex-col items-center w-[275]">
           <div className="text-center flex flex-col gap-4 mb-9">
@@ -70,15 +70,15 @@ function App() {
               </div>
             </InputGroup>
             <a
-              href="#"
-              className="text-left text-gray-500 hover:underline text-sm"
+              href="/register"
+              className="text-left text-white hover:underline text-sm"
             >
               Esqueceu sua senha?
             </a>
           </div>
           <Button
             colorScheme="yellow"
-            _hover={{
+            _hover={{ 
               transform: "scale(1.1)",
               shadow: "10px 10px 25px 0px rgba(255, 221, 42, 0.40)",
             }}
